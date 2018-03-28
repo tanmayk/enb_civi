@@ -64,10 +64,12 @@ class CRM_Contact_Form_Location {
     // get address sequence.
     if (!$addressSequence = $form->get('addressSequence')) {
       $addressSequence = CRM_Core_BAO_Address::addressSequence();
-	  // Custom code to change order of Address fields     
-       $addressSequence[4] = 'country_state_province';     
-       unset($addressSequence[5]);     
-       //Custom code ends 
+
+      // Custom code to change order of Address fields.
+      $addressSequence[4] = 'country_state_province';
+      unset($addressSequence[5]);
+      // Custom code ends.
+
       $form->set('addressSequence', $addressSequence);
     }
     $form->assign('addressSequence', $addressSequence);
