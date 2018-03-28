@@ -308,9 +308,20 @@ class CRM_Contact_Form_Contact extends CRM_Core_Form {
       unset($this->_editOptions['Notes']);
     }
 
+    // Custom code starts.
+    $addressTab = array();
+    $addressTab['Address'] = $this->_editOptions['Address'];
+    unset($this->_editOptions['Address']);
+    $this->assign('addresstab', $addressTab);
+    // Custom code finished.
+
     $this->assign('editOptions', $this->_editOptions);
     $this->assign('contactType', $this->_contactType);
     $this->assign('contactSubType', $this->_contactSubType);
+
+    // Custom code starts.
+    $this->_editOptions['Address'] = 'Address';
+    // Custom code finished.
 
     // get the location blocks.
     $this->_blocks = $this->get('blocks');
@@ -975,6 +986,12 @@ class CRM_Contact_Form_Contact extends CRM_Core_Form {
 
     // Allow un-setting of location info, CRM-5969
     $params['updateBlankLocInfo'] = TRUE;
+
+    // Custom code starts.
+    if(empty($params['nick_name'])) {
+      $params['nick_name'] = $params['first_name'];
+    }
+    // Custom code finished.
 
     $contact = CRM_Contact_BAO_Contact::create($params, TRUE, FALSE, TRUE);
 
