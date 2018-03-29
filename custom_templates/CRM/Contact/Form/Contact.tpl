@@ -38,10 +38,10 @@
     <div class="crm-submit-buttons">
     {include file="CRM/common/formButtons.tpl" location="top"}
     </div>
-	{* Custom code start *}
-     {foreach from = $addresstab item = "title" key="name"}
-        {include file="CRM/Contact/Form/Edit/Address.tpl"}
-     {/foreach}
+    {* Custom code start *}
+    {foreach from = $addresstab item = "title" key="name"}
+      {include file="CRM/Contact/Form/Edit/Address.tpl"}
+    {/foreach}
     {* Custom code end *}
     <div class="crm-accordion-wrapper crm-contactDetails-accordion">
       <div class="crm-accordion-header">
