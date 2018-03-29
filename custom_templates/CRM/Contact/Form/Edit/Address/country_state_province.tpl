@@ -1,8 +1,8 @@
 {*
  +--------------------------------------------------------------------+
- | CiviCRM version 4.7                                                |
+ | CiviCRM version 4.5                                                |
  +--------------------------------------------------------------------+
- | Copyright CiviCRM LLC (c) 2004-2017                                |
+ | Copyright CiviCRM LLC (c) 2004-2014                                |
  +--------------------------------------------------------------------+
  | This file is a part of CiviCRM.                                    |
  |                                                                    |
@@ -26,38 +26,18 @@
 <tr><td colspan="3" style="padding:0;">
 <table class="crm-address-element">
 <tr>
-   {if !empty($form.address.$blockId.city)}
-       <td>
-          {$form.address.$blockId.city.label}<br />
-          {$form.address.$blockId.city.html}
-       </td>
-    {/if}
-
-   {if !empty($form.address.$blockId.state_province_id)}
-     <td>
-        {$form.address.$blockId.state_province_id.label}<br />
-        {$form.address.$blockId.state_province_id.html}
-     </td>
-   {/if}
-   <td colspan="2">&nbsp;&nbsp;</td>
-</tr>
-<tr>
-    {if !empty($form.address.$blockId.postal_code)}
-       <td>
-          {$form.address.$blockId.postal_code.label}{if !empty($form.address.$blockId.postal_code_suffix)}&nbsp;<span>{ts}Suffix{/ts}</span>{/if}<br />
-          {$form.address.$blockId.postal_code.html}&nbsp;&nbsp;
-          {if !empty($form.address.$blockId.postal_code_suffix)}
-            {$form.address.$blockId.postal_code_suffix.html} {help id="id-postal-code-suffix" file="CRM/Contact/Form/Contact.hlp"}
-          {/if}
-       </td>
-    {/if}
    {if !empty($form.address.$blockId.country_id)}
      <td>
         {$form.address.$blockId.country_id.label}<br />
         {$form.address.$blockId.country_id.html}
      </td>
    {/if}
-
+   {if !empty($form.address.$blockId.state_province_id)} 
+     <td>
+        {$form.address.$blockId.state_province_id.label}<br />
+        {$form.address.$blockId.state_province_id.html}
+     </td>
+   {/if}
    <td colspan="2">&nbsp;&nbsp;</td>
 </tr>
 </table>
